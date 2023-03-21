@@ -1,6 +1,0 @@
-target: target
-sources:
-  - source: bla
-    version: 2.0.0
-  - source: second
-    version: 67890

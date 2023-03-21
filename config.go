@@ -8,18 +8,20 @@ import (
 )
 
 type Source struct {
+	Name    string `yaml:"name"`
 	Source  string `yaml:"source"`
 	Version string `yaml:"version"`
 }
 
 type Config struct {
 	Target  string   `yaml:"target"`
-	Configs []Source `yaml:"sources"`
+	Output  string   `yaml:"output"`
+	Sources []Source `yaml:"sources"`
 }
 
-func GetConfig() Config {
+func GetConfig(configFile string) Config {
 
-	yamlFile, err := os.ReadFile(versed)
+	yamlFile, err := os.ReadFile(configFile)
 	if err != nil {
 		log.Fatalf("failed to read configuration in file %s due to error: %s", versed, err)
 	}

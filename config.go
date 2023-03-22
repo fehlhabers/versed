@@ -33,3 +33,19 @@ func GetConfig(configFile string) Config {
 
 	return config
 }
+
+func (c Config) oFilePath(file string) string {
+	return c.Output + "/" + file
+}
+
+func (c Config) tFilePath(file string) string {
+	return c.Target + "/" + file
+}
+
+func (s Source) replToken() string {
+	return "&(versed." + s.Name + ")" 
+}
+
+func (s Source) replacement() string {
+	return s.Source + s.Version
+}

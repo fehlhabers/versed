@@ -8,15 +8,14 @@ import (
 )
 
 type Source struct {
-	Name    string `yaml:"name"`
-	Source  string `yaml:"source"`
-	Version string `yaml:"version"`
+	Source  string
+	Version string
 }
 
 type Config struct {
-	Target  string   `yaml:"target"`
-	Output  string   `yaml:"output"`
-	Sources []Source `yaml:"sources"`
+	Target  string
+	Output  string
+	Sources map[string]Source
 }
 
 func GetConfig(configFile string) Config {
@@ -42,8 +41,8 @@ func (c Config) tFilePath(file string) string {
 	return c.Target + "/" + file
 }
 
-func (s Source) replToken() string {
-	return "&(versed." + s.Name + ")" 
+func replToken(name string) string {
+	return "&(versed." + name + ")" 
 }
 
 func (s Source) replacement() string {

@@ -1,9 +1,0 @@
-target: test/data
-output: test/output
-sources:
-  - name: testsource1 
-    source: source1
-    version: v1
-  - name: testsource2
-    source: source2
-    version: v2

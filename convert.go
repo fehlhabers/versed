@@ -45,7 +45,7 @@ func (c Config) convertToOutput(file string) {
 func (c Config) replace(row string) (bool, string) {
 	for sn, s := range c.Sources {
 		if strings.Contains(row, replToken(sn)) {
-			return true, strings.ReplaceAll(row, replToken(sn),s.replacement())
+			return true, strings.ReplaceAll(row, replToken(sn), s.replacement())
 		}
 	}
 	return false, ""

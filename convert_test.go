@@ -3,14 +3,14 @@ package main
 import (
 	"encoding/json"
 	"io/ioutil"
-	"testing"
 	"os"
+	"testing"
 )
 
 func TestConvert(t *testing.T) {
 	cleanOutput()
 	config := NewTestConfig()
-	
+
 	config.Convert()
 	output, err := ioutil.ReadFile("test/output/example.json")
 	if err != nil {
@@ -26,7 +26,7 @@ func TestConvert(t *testing.T) {
 	for _, s := range config.Sources {
 		found := 0
 		for _, act := range payload {
-			if act == s.Source + s.Version {
+			if act == s.Source+s.Version {
 				found++
 			}
 		}

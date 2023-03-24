@@ -42,7 +42,7 @@ func (c Config) tFilePath(file string) string {
 }
 
 func replToken(name string) string {
-	return "&(versed." + name + ")" 
+	return "&(versed." + name + ")"
 }
 
 func (s Source) replacement() string {

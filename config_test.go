@@ -12,7 +12,7 @@ func TestValuesPopulated(t *testing.T) {
 
 	for i, src := range actConf.Sources {
 		if src != expConf.Sources[i] {
-			t.Errorf("Sources did not match. Wanted %s - got %s",expConf.Sources[i], src)
+			t.Errorf("Sources did not match. Wanted %s - got %s", expConf.Sources[i], src)
 		}
 	}
 

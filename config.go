@@ -18,16 +18,16 @@ type Config struct {
 	Sources map[string]Source
 }
 
-func GetConfig(configFile string) Config {
+func GetConfig(versed string) Config {
 
-	yamlFile, err := os.ReadFile(configFile)
+	yamlFile, err := os.ReadFile(versed)
 	if err != nil {
-		log.Fatalf("failed to read configuration in file %s due to error: %s", versed, err)
+		log.Fatalf("Failed to read configuration in <%s> due to error: %s", versed, err)
 	}
 
 	var config Config
 	if err := yaml.Unmarshal(yamlFile, &config); err != nil {
-		log.Fatalf("failed to parse yaml file due to error: %s", err)
+		log.Fatalf("Failed to parse yaml file due to error: %s", err)
 	}
 
 	return config

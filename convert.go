@@ -3,13 +3,14 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 )
 
 func (c Config) Convert() {
 	files, err := ioutil.ReadDir(c.Target)
 	if err != nil {
-		log.Fatalf("Unable to read files in target dir: %s - error: %s", c.Target, err)
+		log.Fatalf("Unable to read files in target dir: <%s> - got error: %s", c.Target, err)
 	}
 
 	for _, file := range files {
@@ -36,6 +37,7 @@ func (c Config) convertToOutput(file string) {
 	}
 	ofile := []byte(strings.Join(rows, "\n"))
 
+	_ = os.Mkdir(c.Output, 0774)
 	err = ioutil.WriteFile(c.oFilePath(file), ofile, 0644)
 	if err != nil {
 		log.Fatalf("Unable to write file: %s - error: %s", file, err)

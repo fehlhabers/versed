@@ -7,7 +7,7 @@ import (
 )
 
 func TestValuesPopulated(t *testing.T) {
-	expConf := NewTestConfig()
+	expConf := NewTestConfig("test/output")
 	actConf := GetConfig("test/versed.yml")
 
 	for i, src := range actConf.Sources {
@@ -53,10 +53,10 @@ func TestInvalidFile(t *testing.T) {
 	t.Fatalf("process ran with err %v, want exit status 1", err)
 }
 
-func NewTestConfig() Config {
+func NewTestConfig(output string) Config {
 	return Config{
 		Target: "test/data",
-		Output: "test/output",
+		Output: output,
 		Sources: map[string]Source{
 			"testsource1": {
 				Source:  "source1",

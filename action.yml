@@ -1,0 +1,16 @@
+name: 'versed'
+description: 'A tool for string replacement in automation'
+inputs:
+  config:
+    description: 'Location of the versed.yml'
+    required: false
+    default: './versed.yml'
+runs:
+  using: "composite"
+  steps:
+    - run: wget https://github.com/fehlhabers/versed/releases/download/v0.0.3/versed
+      shell: bash
+    - run: chmod u+x versed
+      shell: bash
+    - run: ./versed -f ${{ inputs.config }}
+      shell: bash

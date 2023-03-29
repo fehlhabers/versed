@@ -21,5 +21,5 @@ jobs:
       with:
         config: "./test/versed.yml"
     - name: print-output
-      run: cd ./test/output && ls
+      run: cd ./test/output && less example.json
       

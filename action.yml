@@ -1,5 +1,8 @@
 name: 'versed-action'
 description: 'A tool for string replacement in automation'
+branding:
+  icon: arrow-right-circle
+  color: blue
 inputs:
   config:
     description: 'Location of the versed.yml'

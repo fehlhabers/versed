@@ -1,4 +1,4 @@
-name: 'versed'
+name: 'versed-action'
 description: 'A tool for string replacement in automation'
 inputs:
   config:
@@ -8,7 +8,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: wget https://github.com/fehlhabers/versed/releases/download/v0.0.3/versed
+    - run: wget https://github.com/fehlhabers/versed/releases/download/v1.0.0/versed
       shell: bash
     - run: chmod u+x versed
       shell: bash

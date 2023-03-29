@@ -20,4 +20,6 @@ jobs:
       uses: ./
       with:
         config: "./test/versed.yml"
+    - name: print-output
+      run: cd ./test/output && ls
       

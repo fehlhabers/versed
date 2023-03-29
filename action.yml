@@ -8,6 +8,8 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: ls a
+      shell: bash
     - run: wget https://github.com/fehlhabers/versed/releases/download/v0.0.3/versed
       shell: bash
     - run: chmod u+x versed

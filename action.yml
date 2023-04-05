@@ -8,9 +8,15 @@ inputs:
     description: 'Location of the versed.yml'
     required: false
     default: './versed.yml'
+  dir:
+    description: 'Directory where versed should be run'
+    required: false
+    default: '.'
 runs:
   using: "composite"
   steps:
+    - run: cd ${{ inputs.dir }}
+      shell: bash
     - run: wget https://github.com/fehlhabers/versed/releases/download/v1.0.0/versed
       shell: bash
     - run: chmod u+x versed

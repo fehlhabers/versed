@@ -51,7 +51,7 @@ The recommended approach is that the `versed.yml` is put in the root of where yo
 ```
     steps:
     - name: Set versions
-      uses: actions/versed@v2
+      uses: fehlhabers/versed@v2
       with: 
         dir: 'environment/westeurope/prod'
 

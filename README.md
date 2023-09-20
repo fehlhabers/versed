@@ -18,12 +18,8 @@ A versed.yml could look like this:
 target: data
 output: output
 sources:
-  testsource1: 
-    source: source1
-    version: v1
-  testsource2:
-    source: source2
-    version: v2
+  source1: v1
+  source2: v2
 ```
 
 In order for versed to update values, the target files would need to be tagged like the following, using the `&(versed.SOURCE_NAME)` format. 
@@ -31,15 +27,15 @@ In order for versed to update values, the target files would need to be tagged l
 So, if a target file looks like this:
 ```
 [
-  "&(versed.testsource1)",
-  "&(versed.testsource2)"
+  "&(versed.source1)",
+  "&(versed.source2)"
 ]
 ```
 When running versed with the above config and target file, it would produce:
 ```
 [
-  "source1v1",
-  "source2v2"
+  "v1",
+  "v2"
 ]
 ```
 
@@ -47,12 +43,12 @@ When running versed with the above config and target file, it would produce:
 
 ### Usage
 
-The recommended approach is that the `versed.yml` is put in the root of where you want to apply your versions. If you are in a GitOps environment with multiple stages and regions, you might have something like this: 
+The recommended approach is that the `versed.yml` is put in the stage folder for the particular environment you want to represent. If you are in a GitOps environment with multiple stages and regions, you might have something like this:
 ```
     steps:
     - name: Set versions
       uses: fehlhabers/versed@v2
-      with: 
+      with:
         dir: 'environment/westeurope/prod'
 
     - name: Apply terraform

@@ -7,10 +7,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-type Source struct {
-	Source  string
-	Version string
-}
+type Source string
 
 type Config struct {
 	Target  string
@@ -46,5 +43,5 @@ func replToken(name string) string {
 }
 
 func (s Source) replacement() string {
-	return s.Source + s.Version
+	return string(s)
 }

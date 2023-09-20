@@ -17,8 +17,8 @@ jobs:
     - name: Set versions
       uses: ./
       with:
-        dir: test
+        dir: test/action
 
     - name: Check result
-      working-directory: test
-      run: cat example.json
+      working-directory: test/action
+      run: cat output/example.json

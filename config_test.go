@@ -58,14 +58,8 @@ func NewTestConfig(output string) Config {
 		Target: "test/data",
 		Output: output,
 		Sources: map[string]Source{
-			"testsource1": {
-				Source:  "source1",
-				Version: "v1",
-			},
-			"testsource2": {
-				Source:  "source2",
-				Version: "v2",
-			},
+			"testsource1": "v1",
+			"testsource2": "v2",
 		},
 	}
 }

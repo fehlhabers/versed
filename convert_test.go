@@ -65,7 +65,7 @@ func assertOutputToConfig(output []byte, t *testing.T, config Config) {
 	for _, s := range config.Sources {
 		found := 0
 		for _, act := range payload {
-			if act == s.Source+s.Version {
+			if act == string(s) {
 				found++
 			}
 		}

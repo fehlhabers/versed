@@ -9,7 +9,7 @@ A use case which triggered this project was the poor version handling in Terrafo
 
 ## How it works
 
-Versed is a lightweight approach to versioning, which basically replaces variables in text files in a given folder and puts the output in a different folder. The current version supports 2 parts as it's common with a name and version, although this is likely to become more generic.
+Versed is a lightweight approach to versioning, which basically replaces variables in text files in a given folder and puts the output in a different folder.
 
 Versed uses a `versed.yml` file to configure the variables to replace.
 

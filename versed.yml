@@ -1,0 +1,7 @@
+target: test/data
+output: test/output
+sources:
+  testsource1:
+    version: v1
+  testsource2:
+    version: v2
